@@ -7,16 +7,21 @@ chrome.extension.sendMessage({}, function(response) {
             clearInterval(readyStateCheckInterval);
 
             document.onkeyup = function(evt) {
+
+                console.debug('evt');
                 evt = evt || window.event;
 
-                var current_build = document.querySelector('#builds > li.current');
 
                 if (evt.key === "ArrowRight") {
+                    var current_build = document.querySelector('#builds > li.current');
                     current_build.nextSibling.querySelector('a').click()
                 } else if (evt.key === "ArrowLeft") {
+                    var current_build = document.querySelector('#builds > li.current');
                     current_build.previousSibling.querySelector('a').click()
                 } else if (evt.key === "ArrowDown") {
                     document.querySelectorAll('.header').forEach(function(it){ it.click();});
+                } else if (evt.key == "ArrowUp") {
+                    document.querySelectorAll('.nav-item a')[0].click();
                 }
             };
         }
