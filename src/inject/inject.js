@@ -8,7 +8,7 @@ chrome.extension.sendMessage({}, function(response) {
 
             document.onkeyup = function(evt) {
 
-                console.debug('evt');
+                console.info(evt);
                 evt = evt || window.event;
 
 
@@ -22,6 +22,8 @@ chrome.extension.sendMessage({}, function(response) {
                     document.querySelectorAll('.header').forEach(function(it){ it.click();});
                 } else if (evt.key == "ArrowUp") {
                     document.querySelectorAll('.nav-item a')[0].click();
+                } else if (evt.keyu == "Enter" && window.location.href.includes('/jobs/')) {
+                    document.querySelector('button.build-action').click()
                 }
             };
         }
