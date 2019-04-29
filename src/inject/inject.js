@@ -7,7 +7,12 @@ chrome.extension.sendMessage({}, function(response) {
             clearInterval(readyStateCheckInterval);
 
             var region = window.location.host.split('.')[2]
-
+            var x = document.createElement("div");
+            x.textContent = region;
+            x.style.fontSize="30px";
+            x.style.marginLeft="77px";
+            document.querySelector('#elm-app-embed > div > div.module-topbar > div.topbar-logo > a').appendChild(x)
+            
             document.onkeyup = function(evt) {
 
                 console.info(evt);
