@@ -5,11 +5,19 @@ chrome.extension.sendMessage({}, function (response) {
             location.hostname.includes('ci.sys')) {
 
             var region = window.location.host.split('.')[2]
-            var x = document.createElement("li");
-            x.textContent = region;
-            x.style.fontSize = "26px";
-            document.querySelector('#top-bar-app > nav > ul.groups').append(x);
+            try{
+                var x = document.createElement("li");
+                x.textContent = region;
+                x.style.fontSize = "26px";
+                document.querySelector('#top-bar-app > nav > ul.groups').append(x);   
+            } catch {
+                var x = document.createElement("span");
+                x.textContent = region;
+                x.style.fontSize = "26px";
+                x.style.verticalAlign = "top";
 
+                document.querySelector('#elm-app-embed > div > div.module-topbar > div.topbar-logo').append(x);   
+            }
             clearInterval(readyStateCheckInterval);
 
             document.onkeyup = function (evt) {
