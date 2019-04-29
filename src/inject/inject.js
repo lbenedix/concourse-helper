@@ -4,19 +4,25 @@ chrome.extension.sendMessage({}, function (response) {
         if (document.readyState === "complete" &&
             location.hostname.includes('ci.sys')) {
 
+            if (window.location.pathname == '/dashboard') {
+                console.log('dashboard');
+                document.getElementById("search-input-field").focus({preventScroll:true});
+            }
+
             var region = window.location.host.split('.')[2]
-            try{
+            try {
                 var x = document.createElement("li");
                 x.textContent = region;
                 x.style.fontSize = "26px";
-                document.querySelector('#top-bar-app > nav > ul.groups').append(x);   
+
+                document.querySelector('#top-bar-app > nav > ul.groups').append(x);
             } catch {
                 var x = document.createElement("span");
                 x.textContent = region;
                 x.style.fontSize = "26px";
                 x.style.verticalAlign = "top";
 
-                document.querySelector('#elm-app-embed > div > div.module-topbar > div.topbar-logo').append(x);   
+                document.querySelector('#elm-app-embed > div > div.module-topbar > div.topbar-logo').append(x);
             }
             clearInterval(readyStateCheckInterval);
 
