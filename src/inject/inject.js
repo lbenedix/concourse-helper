@@ -28,6 +28,8 @@ chrome.extension.sendMessage({}, function(response) {
                     document.querySelectorAll('button.build-action')[0].click();
                 } else if (evt.key == 'd') {
                     window.location.pathname = '/dashboard'; 
+                }else if (evt.key == 'D') {
+                    window.location.pathname = '/dashboard/hd'; 
                 }
             };
         }
