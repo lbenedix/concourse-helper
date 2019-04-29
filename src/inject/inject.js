@@ -1,17 +1,16 @@
 chrome.extension.sendMessage({}, function (response) {
+
     var readyStateCheckInterval = setInterval(function () {
         if (document.readyState === "complete" &&
             location.hostname.includes('ci.sys')) {
 
-            console.info('Concourse Helper loaded');
-            clearInterval(readyStateCheckInterval);
-
             var region = window.location.host.split('.')[2]
-            var x = document.createElement("div");
+            var x = document.createElement("li");
             x.textContent = region;
             x.style.fontSize = "26px";
-            x.style.marginRight = "0.5em";
-            document.querySelector('.top-bar').insertBefore(x, document.querySelector('.nav-right'));
+            document.querySelector('#top-bar-app > nav > ul.groups').append(x);
+
+            clearInterval(readyStateCheckInterval);
 
             document.onkeyup = function (evt) {
 
