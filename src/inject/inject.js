@@ -6,7 +6,7 @@ chrome.extension.sendMessage({}, function (response) {
 
             if (window.location.pathname == '/dashboard') {
                 console.log('dashboard');
-                document.getElementById("search-input-field").focus({preventScroll:true});
+                document.getElementById("search-input-field").focus({ preventScroll: true });
             }
 
             var region = window.location.host.split('.')[2]
@@ -48,10 +48,13 @@ chrome.extension.sendMessage({}, function (response) {
                     }
                 }
 
-                if (evt.key == 'd') {
-                    window.location.pathname = '/dashboard';
-                } else if (evt.key == 'D') {
-                    window.location.pathname = '/dashboard/hd';
+                if (!window.location.pathname.includes('/dashboard') &&
+                    !window.location.pathname.includes('/login')) {
+                    if (evt.key == 'd') {
+                        window.location.pathname = '/dashboard';
+                    } else if (evt.key == 'D') {
+                        window.location.pathname = '/dashboard/hd';
+                    }
                 }
             };
         }
