@@ -3,6 +3,10 @@
   "version": "0.0.3",
   "manifest_version": 2,
   "description": "",
+  "options_ui": {
+    "page": "src/options.html",
+    "open_in_tab": false
+  },
   "homepage_url": "https://l3q.de",
   "icons": {
     "128": "icons/icon128.png"
@@ -15,7 +19,7 @@
   "content_scripts": [
     {
       "matches": [
-        "https://*.io/*"
+        "https://*/*"
       ],
       "js": [
         "src/inject/inject.js"
