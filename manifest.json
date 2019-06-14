@@ -1,6 +1,9 @@
 {
   "name": "Concourse-Helper",
-  "version": "0.0.3",
+  "version": "0.0.6",
+  "permissions": [
+    "activeTab"
+  ],
   "manifest_version": 2,
   "description": "",
   "options_ui": {
@@ -19,11 +22,20 @@
   "content_scripts": [
     {
       "matches": [
-        "https://*/*"
+        "https://ci.sys.emea.vwapps.io/*",
+        "https://ci.sys.na.vwapps.io/*",
+        "https://ci.sys.in.vwapps.io/*",
+        "https://ci.sys.de.vwapps.io/*",
+        "https://ci.sys.ap.vwapps.io/*",
+        "https://ci.sys.cn.vwapps.io/*"
       ],
       "js": [
         "src/inject/inject.js"
+      ],
+      "css": [
+        "src/inject/inject.css"
       ]
+
     }
   ]
 }

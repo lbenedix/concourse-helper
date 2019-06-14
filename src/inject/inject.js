@@ -31,7 +31,7 @@ chrome.extension.sendMessage({}, function (response) {
                     if (window.location.pathname.includes('/pipelines/') && !window.location.pathname.includes('/builds/')) {
                         var running_jobs = document.querySelectorAll('.started a');
                         if (running_jobs.length > 0){
-                            window.location.pathname = running_jobs.href.baseVal
+                            window.location.pathname = running_jobs[0].href.baseVal
                         }
                     }
 

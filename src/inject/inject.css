@@ -1,3 +1,15 @@
 /**
  * Place your custom CSS styles here.
  **/
+
+
+/* 
+::selection {
+    background: #273747;
+}
+  
+
+::-moz-selection {
+    background: #273747;
+}
+*/
