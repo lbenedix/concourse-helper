@@ -22,12 +22,7 @@
   "content_scripts": [
     {
       "matches": [
-        "https://ci.sys.emea.vwapps.io/*",
-        "https://ci.sys.na.vwapps.io/*",
-        "https://ci.sys.in.vwapps.io/*",
-        "https://ci.sys.de.vwapps.io/*",
-        "https://ci.sys.ap.vwapps.io/*",
-        "https://ci.sys.cn.vwapps.io/*"
+        "https://devtools.ci.vwapps.io/*"
       ],
       "js": [
         "src/inject/inject.js"
