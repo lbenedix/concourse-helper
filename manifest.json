@@ -1,6 +1,6 @@
 {
   "name": "Concourse-Helper",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "permissions": [
     "activeTab"
   ],
@@ -22,7 +22,7 @@
   "content_scripts": [
     {
       "matches": [
-        "https://devtools.ci.vwapps.io/*"
+        "https://*.ci.vwapps.io/*"
       ],
       "js": [
         "src/inject/inject.js"
